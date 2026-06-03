@@ -1,0 +1,9 @@
+node_modules/
+react-frontend/node_modules/
+react-frontend/dist/
+.claude/
+__pycache__/
+*.pyc
+.env
+.env.local
+.DS_Store

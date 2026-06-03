@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-900: #0f172a;
+  --bg-800: #1e2533;
+  --text-100: #f8fafc;
+  --text-200: #f1f5f9;
+  --text-400: #94a3b8;
+  --text-500: #64748b;
+  --border-600: #334155;
+  --blue:   #3b82f6;
+  --green:  #22c55e;
+  --purple: #a855f7;
+  --orange: #f97316;
+  --red:    #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-900);
+  color: var(--text-100);
+  font-family: 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+/* Form inputs */
+input, select, textarea {
+  background: #0f172a;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.875rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+input:focus, select:focus { border-color: #3b82f6; }
+input[type="number"] { -moz-appearance: textfield; }
+input[type="number"]::-webkit-inner-spin-button { opacity: 1; }
+
+label {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn-primary:hover  { background: #2563eb; }
+.btn-primary:disabled { background: #334155; cursor: not-allowed; }
+
+.btn-secondary {
+  background: #1e2533;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn-secondary:hover { background: #2d3748; }
+
+.btn-download {
+  background: #1e2533;
+  color: #60a5fa;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn-download:hover { background: #1d4ed8; color: #fff; }
+
+/* Toggle tabs */
+.mode-tab {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  font-family: inherit;
+}
+.mode-tab.active   { background: #3b82f6; color: #fff; }
+.mode-tab.inactive { background: transparent; color: #64748b; }
+.mode-tab:hover:not(.active) { background: #1e2533; color: #94a3b8; }
